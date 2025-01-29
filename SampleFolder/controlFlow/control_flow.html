@@ -8,7 +8,19 @@
 <body>
     <h1>Control Flow and Conditional Statements</h1>
 
+    <h2>Practice Task | Dietary Services</h2>
+
+    <label for="userPos">Please select user type: </label>
+    <select name="user" id="userPos" onChange="userChange()">
+        <option value="undefined">Please select</option>
+        <option value="employee">Employee</option>
+        <option value="enrolled-member">Enrolled Member</option>
+        <option value="subscriber">Subscriber</option>
+        <option value="non-subscriber">Non-subscriber</option>
+    </select>
+
+    <p id="message">Please select the user type above!</p>
+
     <script src="./control_flow.js"></script>
-    
 </body>
 </html>

@@ -54,3 +54,28 @@ let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated": "Not authenticated";
 
 console.log("Authentication Status: ", authenticationStatus);
+
+// Practice Task 
+console.log("==== ==== ==== ====");
+
+const userPosEl = document.getElementById("userPos");
+const messageEl = document.getElementById("message");
+
+console.log(userPosEl.value);
+console.log(messageEl.innerText);
+
+function userChange() {
+    if (userPosEl.value === 'undefined') {
+        messageEl.style.color = 'red';
+    } else if (userPosEl.value === 'employee') {
+        messageEl.innerText = 'You are authorized to have acess to Dietary services'
+    } else if (userPosEl.value === 'enrolled-member' ) {
+        messageEl.innerText = 'You are authorized to have access to Dietary services and one-on-one interaction with dietician';
+
+    } else if (userPosEl.value === 'subscriber') {
+        messageEl.innerText = 'You are authorized to have partial access to facilitate "Dietary Services" only.'
+
+    } else if (userPosEl.value === 'non-subscriber') {
+        messageEl.innerText = 'You have to enroll or at least subscribe first to avail this facility.'
+    }
+}
