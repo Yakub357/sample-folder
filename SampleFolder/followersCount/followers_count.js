@@ -20,3 +20,10 @@ function displayCount() {
     document.getElementById("countDisplay").innerHTML = count;
 }
 
+function resetCount() {
+    count = 0; // resets the count to 0
+
+    displayCount() // Display the count 
+    alert("Yourt Instagram post followers count has been reset.")
+
+}
