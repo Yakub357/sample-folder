@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin-top: 4rem;
+}
+
+/* .container {
+  max-width: 
+} */
+
+.seating-chart {
+  margin-top: 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(3, 8rem);
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.seat {
+  width: 8rem;
+  height: 2.5rem;
+  text-align: center;
+  line-height: 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.booked {
+  background-color: #ff0000;
+  cursor: not-allowed;
+  color: #fff;
+}
+
+.available {
+  background-color: #7fff00;
+}
+
+.available:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.select-button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: #007bff;
+  border-radius: 4px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.select-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
