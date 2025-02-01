@@ -41,16 +41,23 @@ function endTest() {
   // Display the results
   var outputDiv = document.getElementById("output");
   outputDiv.innerHTML = `
+  <p>Total Length: ${userTypedText.split(/\s+/).join("").length}</p>
   <p>Words Typed: ${typedWords}</p>
   <p>Time Elapsed: ${timeElapsed} seconds</p>
   <p>Words Per Minute (WPM): ${wpm}</p>
   `;
 
   // Cleanup the inputs
-  // userTypedText.value = "";
+  cleanUpInputs();
 
   // Reset the button
   var button = document.getElementById("btn");
   button.innerHTML = "Start Test";
   button.onclick = startTest;
+  button.focus();
+}
+
+function cleanUpInputs() {
+  document.getElementById("inputText").value = "";
+  document.getElementById("userInput").value = "";
 }
