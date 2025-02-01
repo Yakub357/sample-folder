@@ -10,12 +10,13 @@ function startTest() {
   starTime = new Date().getTime();
 
   // Setting focus the userInput
-  document.getElementById("userInput").focus();
+  const userInput = document.getElementById("userInput");
+  userInput.readOnly = false;
+  userInput.focus();
 
   // Change button text and functionality
   var button = document.getElementById("btn");
   button.innerHTML = "End Test";
-  button.onclick = endTest;
 }
 
 function endTest() {
