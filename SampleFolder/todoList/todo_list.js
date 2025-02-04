@@ -61,3 +61,7 @@ taskInput.addEventListener("keydown", (event) => {
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
 clearAllBrn.addEventListener("click", clearAllTasks);
 displayTasks();
+
+const btns = document.getElementsByTagName("button");
+console.log(btns);
+console.log(btns[1]);
