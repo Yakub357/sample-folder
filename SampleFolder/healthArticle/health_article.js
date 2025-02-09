@@ -1,8 +1,56 @@
+let newsReq = new XMLHttpRequest();
+let urlNews = "./news.json";
+
+// Loading articles
 let xhr = new XMLHttpRequest();
 let url = "./health_article.json";
 
+// loading news
+newsReq.open("GET", urlNews, true);
+newsReq.responseType = "json";
+
+// Handling articles
 xhr.open("GET", url, true);
 xhr.responseType = "json";
+
+// handling news
+newsReq.onload = function () {
+  let news = newsReq.response.news;
+  let newsDiv = document.getElementById("news");
+
+  news.forEach((element) => {
+    let newsItemsDiv = document.createElement("div");
+    newsItemsDiv.classList.add("news");
+
+    let title = document.createElement("h2");
+    title.textContent = element.title;
+
+    let source_title = document.createElement("h3");
+    source_title.textContent = element.source_title;
+
+    let keywords = document.createElement("p");
+    element.keywords.forEach((keywordEl) => {
+      let keyword = document.createElement("span");
+      keyword.textContent = keywordEl + "  | ";
+      keyword.style.fontWeight = "bold";
+      keywords.appendChild(keyword);
+    });
+
+    let description = document.createElement("p");
+    description.textContent = element.description;
+
+    let content = document.createElement("p");
+    content.textContent = element.content;
+
+    newsItemsDiv.appendChild(title);
+    newsItemsDiv.appendChild(source_title);
+    newsItemsDiv.appendChild(description);
+    newsItemsDiv.appendChild(keywords);
+    newsItemsDiv.appendChild(content);
+
+    newsDiv.appendChild(newsItemsDiv);
+  });
+};
 
 xhr.onload = function () {
   let articles = xhr.response.articles;
@@ -50,5 +98,6 @@ xhr.onload = function () {
 };
 
 console.log(xhr);
-
+console.log(newsReq);
+newsReq.send();
 xhr.send();
